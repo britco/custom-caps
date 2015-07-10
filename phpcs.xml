@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="custom-caps">
+  <rule ref="PSR2">
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration" />
+    <exclude name="PSR1.Files.SideEffects" />
+  </rule>
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="indent" value="2" />
+    </properties>
+  </rule>
+</ruleset>
