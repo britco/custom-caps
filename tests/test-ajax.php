@@ -29,6 +29,8 @@ class CustomCapsTest extends WP_Ajax_UnitTestCase {
     // Post to the update function
     $_POST['custom_caps'] = array('create_post_tag_terms' => 'on');
     
+    // Mimic posting to the profile edit screen on the admin with $user->id as
+    // the loged in user
     do_action('admin_init');
     do_action('personal_options_update', $user->ID);
     
