@@ -15,4 +15,4 @@ dependencies:
     - /tmp/wordpress
 test:
   override:
-    - phpunit
+    - phpunit --debug

@@ -1,6 +1,6 @@
 <?php
 
-class CustomCapsTest extends WP_Ajax_UnitTestCase {
+class AjaxTest extends WP_Ajax_UnitTestCase {
   protected $updated_usermeta = array();
   
   public function setUp() {

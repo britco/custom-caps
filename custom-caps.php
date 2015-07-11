@@ -103,8 +103,6 @@ function cap_edit_save($user_id) {
   foreach($remove_caps as $cap) {
     $user->remove_cap($cap);
   }
-  
-  var_dump(get_user_by('id', $user_id)->cap);
 }
 
 add_action('edit_user_profile', __NAMESPACE__ . '\cap_edit_view');
