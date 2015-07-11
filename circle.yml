@@ -15,4 +15,4 @@ dependencies:
     - /tmp/wordpress
 test:
   override:
-    - phpunit --debug
+    - phpunit --debug --log-json $CIRCLE_TEST_REPORTS/cucumber/tests.cucumber
