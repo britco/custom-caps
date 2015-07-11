@@ -1,6 +1,8 @@
 <?php
 
-class AjaxTest extends WP_Ajax_UnitTestCase {
+class AdminTest extends WP_Ajax_UnitTestCase {
+  // ^ Doesn't actually use ajax testing, but the class has useful helpers that
+  // aren't available in the normal test case
   protected $updated_usermeta = array();
   
   public function setUp() {
