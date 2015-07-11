@@ -12,7 +12,7 @@ dependencies:
           WP_VERSION: 4.0.5
   cache_directories:
     - /tmp/wordpress-tests-lib
-    - /tmp/wordpress/
+    - /tmp/wordpress
 test:
   override:
     - phpunit
