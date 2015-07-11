@@ -1,6 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 class AdminTest extends WP_Ajax_UnitTestCase {
+  // @codingStandardsIgnoreEnd
   // ^ Doesn't actually use ajax testing, but the class has useful helpers that
   // aren't available in the normal test case
   protected $updated_usermeta = array();
@@ -71,4 +72,3 @@ class AdminTest extends WP_Ajax_UnitTestCase {
     $this->assertEquals(!in_array('create_post_tag_terms', $caps), true);
   }
 }
-
