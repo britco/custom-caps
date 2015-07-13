@@ -20,7 +20,9 @@ stored in the database.
 That's it! Now you can edit that capability for users by going to edit user screen.
 
 **Before:**
-![image](https://cloud.githubusercontent.com/assets/1239145/8656986/d4e216c8-294f-11e5-981b-ffc1fea9d9e7.png)
+
+![image](https://cloud.githubusercontent.com/assets/1239145/8657168/e3ba1262-2950-11e5-8168-083f5d24e6ee.png)
 
 **After::**
-![image](https://cloud.githubusercontent.com/assets/1239145/8657041/2f7189a2-2950-11e5-9006-31f1dd5cab04.png)
+
+![image](https://cloud.githubusercontent.com/assets/1239145/8657163/d96c2480-2950-11e5-944c-f5fd8bee549c.png)
