@@ -18,7 +18,7 @@ function get_custom_caps($user_id='') {
   
   $db_custom_caps = array();
 
-  // See http://github.com/britco/BritCo-Wordpress/blob/master/web/wp-admin/user-edit.php#L504
+  // See https://github.com/WordPress/WordPress/blob/4.0.3/wp-admin/user-edit.php#L504
   if(!empty($user_id)) {
     if(!is_object($user_id)) {
       $user = get_user_by('id', $user_id);
