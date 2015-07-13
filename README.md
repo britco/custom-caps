@@ -13,9 +13,7 @@ add_filter('custom_caps', function($caps) {
 });
 ````
 
-`$caps` is an array of capabilities (caps) with the format $label => $value.
-Label should be the human readable version of the capability, and value is the one
-stored in the database.
+`$caps` is an array of custom capabilities (caps) that admins should be able to edit.
 
 That's it! Now you can edit that capability for users by going to edit user screen.
 
