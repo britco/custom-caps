@@ -18,3 +18,9 @@ Label should be the human readable version of the capability, and value is the o
 stored in the database.
 
 That's it! Now you can edit that capability for users by going to edit user screen.
+
+**Before:**
+![image](https://cloud.githubusercontent.com/assets/1239145/8656986/d4e216c8-294f-11e5-981b-ffc1fea9d9e7.png)
+
+**After::**
+![image](https://cloud.githubusercontent.com/assets/1239145/8657041/2f7189a2-2950-11e5-9006-31f1dd5cab04.png)

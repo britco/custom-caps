@@ -48,7 +48,7 @@ function cap_edit_view($user_id) {
   // Fill in grant status for any permissions that have been set for this user
   $user_caps = array();
   foreach($profileuser->caps as $cap => $grant) {
-    if(!array_key_exists($cap,$custom_caps)) {
+    if(!array_key_exists($cap, $custom_caps)) {
       continue;
     }
     
@@ -56,18 +56,18 @@ function cap_edit_view($user_id) {
   }
   
   ?>
-  <h3>Edit Capabilities</h3>
+  <h3>Additional Capabilities</h3>
   <table class="form-table">
   <tbody><tr>
-  	<th><label for="email">Capabilities</label></th>
-		<?php foreach($custom_caps as $cap => $grant): ?>
-	  	<td>
-	      <label>
-	        <input name="custom_caps[<?php echo esc_attr($cap); ?>]" type="checkbox" <?php checked($grant); ?> />
-	        <?php echo esc_html($cap); ?>
-	      </label>
-			</td>
-		<?php endforeach; ?>
+    <th><label for="email">Capabilities</label></th>
+    <?php foreach($custom_caps as $cap => $grant): ?>
+      <td>
+        <label>
+          <input name="custom_caps[<?php echo esc_attr($cap); ?>]" type="checkbox" <?php checked($grant); ?> />
+          <?php echo esc_html($cap); ?>
+        </label>
+      </td>
+    <?php endforeach; ?>
   </tr>
   </tbody></table>
 <?php
@@ -75,11 +75,11 @@ function cap_edit_view($user_id) {
 
 // Add and remove caps as needed when a user is edited from the admin
 function cap_edit_save($user_id) {
-	if (!current_user_can('edit_users') || !current_user_can('edit_user', $user_id) ) {
-		return false;
-	}
+  if (!current_user_can('edit_users') || !current_user_can('edit_user', $user_id)) {
+    return false;
+  }
   
-	$custom_caps = get_custom_caps($user_id);
+  $custom_caps = get_custom_caps($user_id);
   
   // Find out which caps need to get added, and which need to get removed
   if(empty($_POST['custom_caps'])) {
