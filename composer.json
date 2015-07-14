@@ -1,5 +1,6 @@
 {
     "name": "britco/custom-caps",
+    "type": "wordpress-plugin",
     "authors": [
         {
             "name": "Paul Dufour",
