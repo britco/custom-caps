@@ -26,3 +26,4 @@ That's it! Now you can edit that capability for users by going to edit user scre
 **After**
 
 ![image](https://cloud.githubusercontent.com/assets/1239145/8657163/d96c2480-2950-11e5-944c-f5fd8bee549c.png)
+
