@@ -7,5 +7,8 @@
             "email": "paul@brit.co"
         }
     ],
+    "extra": {
+        "installer-name": "custom-caps"
+    }
     "require": {}
 }
