@@ -1,5 +1,7 @@
 # custom-caps
 
+[![Circle CI](https://circleci.com/gh/britco/custom-caps.svg?style=svg)](https://circleci.com/gh/britco/custom-caps)
+
 Adds ability to edit custom capabilities for users in the admin. Why this isn't in core is beyond me.
 
 ## How to use
