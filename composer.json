@@ -1,0 +1,10 @@
+{
+    "name": "britco/custom-caps",
+    "authors": [
+        {
+            "name": "Paul Dufour",
+            "email": "paul@brit.co"
+        }
+    ],
+    "require": {}
+}
