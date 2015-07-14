@@ -9,6 +9,6 @@
     ],
     "extra": {
         "installer-name": "custom-caps"
-    }
+    },
     "require": {}
 }
