@@ -10,5 +10,7 @@
     "extra": {
         "installer-name": "custom-caps"
     },
-    "require": {}
+    "require": {
+       "composer/installers" : "~1.0"
+    }
 }
