@@ -6,7 +6,7 @@ Plugin Name: Custom Caps
 Plugin URI:
 Description: Enables editing of custom capabilities for users
 Author: Paul Dufour
-Version: 0.1
+Version: 0.5
 Author URI: http://www.brit.co
 */
 
