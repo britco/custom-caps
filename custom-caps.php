@@ -37,6 +37,8 @@ function get_custom_caps($user_id='') {
   
   $custom_caps = array_unique(array_merge($db_custom_caps, $plugin_custom_caps));
   
+  sort($custom_caps);
+  
   return $custom_caps;
 }
 
@@ -54,22 +56,23 @@ function cap_edit_view($user_id) {
     
     $custom_caps[$cap] = $grant;
   }
-  
+
   ?>
   <h3>Additional Capabilities</h3>
   <table class="form-table">
   <tbody><tr>
-    <th><label for="email">Capabilities</label></th>
-    <?php foreach($custom_caps as $cap => $grant): ?>
-      <td>
-        <label>
-          <input name="custom_caps[<?php echo esc_attr($cap); ?>]" type="checkbox" <?php checked($grant); ?> />
-          <?php echo esc_html($cap); ?>
-        </label>
-      </td>
-    <?php endforeach; ?>
-  </tr>
-  </tbody></table>
+    <th><label>Capabilities</label></th>
+    <td>
+      <?php foreach($custom_caps as $cap => $grant): ?>
+        <p>
+          <label>
+            <input name="custom_caps[<?php echo esc_attr($cap); ?>]" type="checkbox" <?php checked($grant); ?> />
+            <?php echo esc_html($cap); ?>
+          </label>
+        </p>
+      <?php endforeach; ?>
+    </td>
+  </tr></tbody></table>
 <?php
 }
 
