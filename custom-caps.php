@@ -45,6 +45,11 @@ function get_custom_caps($user_id='') {
 // Display cap-edit form on user-edit
 function cap_edit_view($user_id) {
   global $profileuser;
+  
+  if (!current_user_can('edit_users') || !current_user_can('edit_user', $user_id)) {
+    return false;
+  }
+  
   $custom_caps = array_fill_keys(get_custom_caps($profileuser), 0);
   
   // Fill in grant status for any permissions that have been set for this user
