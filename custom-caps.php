@@ -62,6 +62,8 @@ function cap_edit_view($user_id) {
     $custom_caps[$cap] = $grant;
   }
 
+  wp_nonce_field('custom-caps-update', 'custom-caps-update-nonce');
+
   ?>
   <h3>Additional Capabilities</h3>
   <table class="form-table">
@@ -83,8 +85,14 @@ function cap_edit_view($user_id) {
 
 // Add and remove caps as needed when a user is edited from the admin
 function cap_edit_save($user_id) {
-  if (!current_user_can('edit_users') || !current_user_can('edit_user', $user_id)) {
-    return false;
+  $is_nonce_valid = apply_filters('custom_caps_check_admin_referer', true) ?
+                 check_admin_referer('custom-caps-update', 'custom-caps-update-nonce') :
+                 true;
+  
+  if (!current_user_can('edit_users') ||
+      !current_user_can('edit_user', $user_id) ||
+      !$is_nonce_valid) {
+        return false;
   }
   
   $custom_caps = get_custom_caps($user_id);

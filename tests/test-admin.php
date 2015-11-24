@@ -19,42 +19,50 @@ class AdminTest extends WP_Ajax_UnitTestCase {
       return $true;
     }, 10, 5);
     
-    return call_user_func_array(array($this, 'parent::setUp'), func_get_args());
+    parent::setUp();
+    
+    $this->user = get_user_by('id', $this->factory->user->create(
+      array(
+        'role' => 'administrator'
+      )
+    ));
+    
+    wp_set_current_user($this->user->ID);
+    
+    $_POST = array_merge((array)$_POST, array(
+      'action' =>	'heartbeat',
+      'custom-caps-update-nonce' => wp_create_nonce('custom-caps-update'),
+      '_wp_http_referer' => get_admin_url()
+    ));
+    
+    $_REQUEST = array_merge($_POST, $_GET);
   }
   
   public function testAddCap() {
     global $wpdb;
     
-    // Set current user to the admin user
-    $user = get_user_by('id', 1);
-    wp_set_current_user(1);
-    
+    ob_start();
+        
     // Post to the update function
     $_POST['custom_caps'] = array('create_post_tag_terms' => 'on');
     
     // Mimic posting to the profile edit screen on the admin with $user->id as
     // the loged in user
     do_action('admin_init');
-    do_action('personal_options_update', $user->ID);
+    do_action('personal_options_update', $this->user->ID);
     
-    $user = get_user_by('id', 1);
+    $this->user = get_user_by('id', $this->user->ID);
     
-    $caps = array_keys($user->caps);
+    $caps = array_keys($this->user->caps);
     
-    $this->assertEquals(in_array('create_post_tag_terms', $caps), true);
+    $this->assertEquals(true, in_array('create_post_tag_terms', $caps));
   }
   
   public function testRemoveCap() {
     global $wpdb;
     
-    // Set current user to the admin user
-    $user = get_user_by('id', 1);
-    wp_set_current_user(1);
-    
     // Add the test cap
-    $user->add_cap('create_post_tag_terms');
-    
-    $user = get_user_by('id', 1);
+    $this->user->add_cap('create_post_tag_terms');
     
     // Remove the test cap
     
@@ -63,12 +71,13 @@ class AdminTest extends WP_Ajax_UnitTestCase {
     $_POST['custom_caps'] = array();
     
     do_action('admin_init');
-    do_action('personal_options_update', $user->ID);
+    do_action('personal_options_update', $this->user->ID);
     
-    $user = get_user_by('id', 1);
+    $this->user = get_user_by('id', $this->user->ID);
     
-    $caps = array_keys($user->caps);
+    $caps = array_keys($this->user->caps);
     
-    $this->assertEquals(!in_array('create_post_tag_terms', $caps), true);
+    $this->assertEquals(true, !in_array('create_post_tag_terms', $caps));
   }
+  
 }
