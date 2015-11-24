@@ -8,8 +8,10 @@ if ( ! $_tests_dir ) {
 require_once $_tests_dir . '/includes/functions.php';
 
 function _manually_load_plugin() {
+	define( 'CustomCaps\SKIP_VERIFY_NONCE', true );
 	require dirname( dirname( __FILE__ ) ) . '/custom-caps.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
+
 
 require $_tests_dir . '/includes/bootstrap.php';
